@@ -103,13 +103,46 @@ input, select, textarea { font: inherit; }
   background: var(--panel); border-bottom: 1px solid var(--line);
   position: sticky; top: 66px; z-index: 10;
 }
-.app__nav button {
+.app__nav-link {
   padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line);
-  background: #fff; color: var(--muted); font-size: 0.85rem; font-weight: 600; white-space: nowrap;
+  background: #fff; color: var(--muted); font-size: 0.85rem; font-weight: 600;
+  white-space: nowrap; text-decoration: none; cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
-.app__nav button.active { background: #0c0a09; color: #fff; border-color: #0c0a09; }
+.app__nav-link:hover { background: #f4f4f5; color: var(--ink); }
+.app__nav-link.active { background: #0c0a09; color: #fff; border-color: #0c0a09; }
 
 .app__editor { padding: 26px 22px 120px; max-width: 900px; width: 100%; margin: 0 auto; }
+
+/* ---------------- page ---------------- */
+.page__head { margin-bottom: 22px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+.page__crumb {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--brand); margin-bottom: 6px;
+}
+.page__title {
+  font-family: var(--display); font-size: clamp(1.8rem, 4vw, 2.4rem);
+  letter-spacing: 0.03em; line-height: 1; text-transform: uppercase;
+}
+.page__sub { color: var(--muted); font-size: 0.9rem; margin-top: 10px; max-width: 60ch; }
+
+/* ---------------- overview ---------------- */
+.overview {
+  display: grid; grid-template-columns: 1fr; gap: 12px;
+}
+.overview__card {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+  padding: 16px 18px; text-decoration: none; color: var(--ink);
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+.overview__card:hover { border-color: var(--brand); transform: translateY(-2px); box-shadow: var(--shadow); }
+.overview__label { flex: 1; font-weight: 600; font-size: 0.95rem; }
+.overview__meta {
+  font-size: 0.76rem; color: var(--muted); background: #f4f4f5;
+  padding: 3px 10px; border-radius: 999px; white-space: nowrap;
+}
+.overview__arrow { width: 18px; height: 18px; color: var(--brand); flex: none; }
 
 /* ---------------- sections & fields ---------------- */
 .section {
@@ -205,15 +238,19 @@ input, select, textarea { font: inherit; }
 @media (min-width: 720px) {
   .grid2 { grid-template-columns: 1fr 1fr; }
   .grid2 .field--full { grid-column: 1 / -1; }
+  .overview { grid-template-columns: 1fr 1fr; }
 }
 @media (min-width: 1000px) {
-  .app__body { grid-template-columns: 220px 1fr; }
+  .app__body { grid-template-columns: 230px 1fr; }
   .app__nav {
     flex-direction: column; position: sticky; top: 66px; align-self: start;
     height: calc(100dvh - 66px); overflow-y: auto; border-bottom: none;
     border-right: 1px solid var(--line); padding: 16px 12px;
   }
-  .app__nav button { text-align: left; border-radius: var(--radius); }
+  .app__nav-link { text-align: left; border-radius: var(--radius); border-color: transparent; background: transparent; }
+  .app__nav-link:hover { background: #f4f4f5; }
+  .app__nav-link.active { background: #0c0a09; color: #fff; border-color: #0c0a09; }
+  .overview { grid-template-columns: 1fr 1fr 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {

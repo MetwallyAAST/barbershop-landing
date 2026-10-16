@@ -154,7 +154,7 @@
       .then(function (content) {
         CONTENT = content;
         DIRTY = false;
-        renderEditor();
+        initRouter();
         setStatus("All changes saved", "ok");
       })
       .catch(function (err) {
@@ -198,44 +198,145 @@
 
   /* -------------------------------------------------------- rendering */
 
-  function renderEditor() {
-    el.editor.innerHTML = "";
-    el.sectionNav.innerHTML = "";
+  var NAV_BUTTONS = {};
 
+  function pageKeys() {
     var schema = window.FB_SCHEMA;
-    var keys = Object.keys(schema.fields);
+    return Object.keys(schema.fields).map(function (k) {
+      return { key: k, label: schema.fields[k].label || k };
+    });
+  }
 
-    keys.forEach(function (key, index) {
-      var node = schema.fields[key];
-      var section = h("section", { class: "section", id: "sec-" + key });
-      section.appendChild(h("h2", { text: node.label || key }));
+  function buildNav() {
+    el.sectionNav.innerHTML = "";
+    NAV_BUTTONS = {};
 
-      var body = h("div");
-      renderNode(body, node, propBinding(CONTENT, key), key);
-      section.appendChild(body);
-      el.editor.appendChild(section);
+    var home = h("a", {
+      class: "app__nav-link",
+      href: "#/",
+      text: "Overview"
+    });
+    home.dataset.page = "__overview";
+    el.sectionNav.appendChild(home);
+    NAV_BUTTONS.__overview = home;
 
-      var navBtn = h("button", {
-        type: "button",
-        text: node.label || key,
-        onclick: function () {
-          if (DIRTY) { /* keep */ }
-          location.hash = "sec-" + key;
-          setActiveNav(key);
-        }
+    pageKeys().forEach(function (page) {
+      var link = h("a", {
+        class: "app__nav-link",
+        href: "#/" + page.key
       });
-      navBtn.dataset.section = key;
-      el.sectionNav.appendChild(navBtn);
-
-      if (index === 0) navBtn.classList.add("active");
+      link.dataset.page = page.key;
+      link.textContent = page.label;
+      el.sectionNav.appendChild(link);
+      NAV_BUTTONS[page.key] = link;
     });
   }
 
   function setActiveNav(key) {
-    Array.prototype.forEach.call(el.sectionNav.children, function (b) {
-      b.classList.toggle("active", b.dataset.section === key);
+    Object.keys(NAV_BUTTONS).forEach(function (k) {
+      NAV_BUTTONS[k].classList.toggle("active", k === key);
+      if (k === key) NAV_BUTTONS[k].setAttribute("aria-current", "page");
+      else NAV_BUTTONS[k].removeAttribute("aria-current");
     });
   }
+
+  function currentPageKey() {
+    var raw = String(location.hash || "").replace(/^#\/?/, "");
+    var schema = window.FB_SCHEMA;
+    if (!raw) return "__overview";
+    return schema.fields[raw] ? raw : "__overview";
+  }
+
+  function renderPage(key) {
+    el.editor.innerHTML = "";
+    el.editor.scrollTop = 0;
+
+    if (key === "__overview") {
+      renderOverview();
+      return;
+    }
+
+    var node = window.FB_SCHEMA.fields[key];
+    var page = h("article", { class: "page" });
+
+    var header = h("header", { class: "page__head" });
+    header.appendChild(h("p", { class: "page__crumb", text: "Content" }));
+    header.appendChild(h("h1", { class: "page__title", text: node.label || key }));
+    page.appendChild(header);
+
+    var card = h("section", { class: "section" });
+    var body = h("div");
+    renderNode(body, node, propBinding(CONTENT, key));
+    card.appendChild(body);
+    page.appendChild(card);
+
+    el.editor.appendChild(page);
+  }
+
+  function renderOverview() {
+    var page = h("article", { class: "page" });
+
+    var header = h("header", { class: "page__head" });
+    header.appendChild(h("p", { class: "page__crumb", text: "Dashboard" }));
+    header.appendChild(h("h1", { class: "page__title", text: "Content overview" }));
+    header.appendChild(h("p", {
+      class: "page__sub",
+      text: "Choose a section to edit. Every change is saved from the top bar, or with Ctrl/Cmd + S."
+    }));
+    page.appendChild(header);
+
+    var grid = h("div", { class: "overview" });
+    pageKeys().forEach(function (p) {
+      var node = window.FB_SCHEMA.fields[p.key];
+      var count = "";
+      if (node.type === "list") {
+        var arr = CONTENT[p.key];
+        count = Array.isArray(arr) ? arr.length + " items" : "";
+      } else if (node.type === "group") {
+        var sub = node.fields || {};
+        var listKeys = Object.keys(sub).filter(function (k) { return sub[k].type === "list"; });
+        if (listKeys.length) {
+          var total = listKeys.reduce(function (acc, k) {
+            var a = CONTENT[p.key] && CONTENT[p.key][k];
+            return acc + (Array.isArray(a) ? a.length : 0);
+          }, 0);
+          count = total + " items";
+        } else {
+          count = Object.keys(sub).length + " fields";
+        }
+      }
+
+      var card = h("a", { class: "overview__card", href: "#/" + p.key });
+      card.appendChild(h("span", { class: "overview__label", text: p.label }));
+      if (count) card.appendChild(h("span", { class: "overview__meta", text: count }));
+      var arrow = icon('<path d="M5 12h14M13 6l6 6-6 6"/>');
+      arrow.classList.add("overview__arrow");
+      card.appendChild(arrow);
+      grid.appendChild(card);
+    });
+    page.appendChild(grid);
+
+    el.editor.appendChild(page);
+  }
+
+  function router() {
+    var key = currentPageKey();
+    setActiveNav(key);
+    renderPage(key);
+  }
+
+  function initRouter() {
+    buildNav();
+    if (!location.hash) {
+      try { history.replaceState(null, "", "#/"); } catch (e) { location.hash = "#/"; }
+    }
+    router();
+  }
+
+  window.addEventListener("hashchange", function () {
+    if (el.appView.hidden || !CONTENT) return;
+    router();
+  });
 
   function renderNode(parent, node, binding) {
     if (node.type === "group") return renderGroup(parent, node, binding);

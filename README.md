@@ -22,6 +22,8 @@ build step, no front-end framework.
 
 **Admin panel** (`/admin/`)
 - Secure login (bcrypt-hashed password, server-side sessions)
+- **One page per section** — a dashboard overview plus a dedicated page for every
+  part of the site (Hero, Services, Pricing, …), each at its own `#/route`
 - Edits **every** text, image, list and theme colour on the page
 - Schema-driven UI — add, duplicate, reorder and delete list items
 - Image upload (or paste an external URL)
