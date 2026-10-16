@@ -1,5 +1,8 @@
-(function () {
+function initSite() {
   "use strict";
+
+  if (initSite._done) return;
+  initSite._done = true;
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -321,4 +324,12 @@
   /* ---------------- Footer year ---------------- */
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
-})();
+}
+
+/* Content is hydrated asynchronously by content.js. Initialise the UI either
+   once that finishes, or immediately if the content layer is unavailable. */
+if (document.documentElement.dataset.fbContentPending === "1") {
+  window.addEventListener("fb:content-ready", initSite, { once: true });
+} else {
+  initSite();
+}

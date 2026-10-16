@@ -111,6 +111,12 @@
 *.pem
 *.key
 
+# Server runtime data (credentials, session secret, uploads)
+server/data/auth.json
+server/data/.session-secret
+server/data/uploads/
+server/data/*.tmp
+
 # Temporary files
 *.tmp
 *.temp

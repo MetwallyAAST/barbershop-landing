@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Fade &amp; Blade — Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <!-- ============ LOGIN ============ -->
+  <div class="login" id="loginView" hidden>
+    <form class="login__card" id="loginForm" novalidate>
+      <div class="login__brand">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/>
+          <path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/>
+        </svg>
+        <span>Fade<span class="amp">&amp;</span>Blade</span>
+      </div>
+      <h1>Admin sign in</h1>
+      <p class="login__sub">Manage every part of your landing page.</p>
+
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" autocomplete="username" required autofocus />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" autocomplete="current-password" required />
+
+      <p class="login__error" id="loginError" role="alert"></p>
+
+      <button class="btn btn--primary" type="submit" id="loginBtn">
+        <span class="btn__label">Sign in</span>
+        <span class="spinner" aria-hidden="true"></span>
+      </button>
+      <p class="login__hint">Sessions expire after 4 hours of inactivity.</p>
+    </form>
+  </div>
+
+  <!-- ============ ADMIN APP ============ -->
+  <div class="app" id="appView" hidden>
+    <header class="app__bar">
+      <div class="app__brand">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/>
+          <path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/>
+        </svg>
+        <span>Content Manager</span>
+      </div>
+
+      <div class="app__status" id="status" aria-live="polite"></div>
+
+      <div class="app__actions">
+        <a class="btn btn--ghost" href="/" target="_blank" rel="noopener">View site</a>
+        <button class="btn btn--primary" id="saveBtn" type="button">
+          <span class="btn__label">Save changes</span>
+          <span class="spinner" aria-hidden="true"></span>
+        </button>
+        <button class="btn btn--ghost" id="logoutBtn" type="button">Sign out</button>
+      </div>
+    </header>
+
+    <div class="app__body">
+      <nav class="app__nav" id="sectionNav" aria-label="Sections"></nav>
+      <main class="app__editor" id="editor" aria-label="Content editor"></main>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <input type="file" id="filePicker" accept="image/*" hidden />
+  </div>
+
+  <script src="schema.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

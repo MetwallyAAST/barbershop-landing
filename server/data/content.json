@@ -1,0 +1,499 @@
+{
+  "site": {
+    "brandLeft": "Fade",
+    "brandAmp": "&",
+    "brandRight": "Blade",
+    "seoTitle": "Fade & Blade — Premium Barbershop & Grooming Parlour",
+    "seoDescription": "Fade & Blade — a premium barbershop offering precision cuts, classic shaves, and beard grooming. Walk in sharp, walk out sharper. Book your chair today.",
+    "theme": {
+      "primary": "#0C0A09",
+      "panel": "#171412",
+      "panel2": "#1C1917",
+      "gold": "#C9A227",
+      "goldBright": "#E0BB4E",
+      "goldDeep": "#A16207",
+      "background": "#FAF9F7",
+      "foreground": "#14110F",
+      "cream": "#F4EFE7"
+    }
+  },
+  "topbar": {
+    "hours": "Mon–Sat: 9:00 – 20:00 · Sun: 10:00 – 16:00",
+    "phone": "(555) 123–4567",
+    "phoneHref": "tel:+15551234567",
+    "address": "128 Bedford St, Brooklyn, NY"
+  },
+  "nav": {
+    "links": [
+      {
+        "label": "Services",
+        "href": "#services"
+      },
+      {
+        "label": "About",
+        "href": "#about"
+      },
+      {
+        "label": "Barbers",
+        "href": "#team"
+      },
+      {
+        "label": "Gallery",
+        "href": "#gallery"
+      },
+      {
+        "label": "Pricing",
+        "href": "#pricing"
+      },
+      {
+        "label": "Visit",
+        "href": "#contact"
+      }
+    ],
+    "cta": "Book a Chair"
+  },
+  "hero": {
+    "eyebrow": "Est. 2009 · Brooklyn, NY",
+    "titleLine1": "Sharp cuts.",
+    "titleAccent": "Timeless",
+    "titleLine2": "character.",
+    "lead": "Precision fades, hot-towel shaves and honest conversation. A modern barbershop built on old-school craft — where every man leaves feeling like the best version of himself.",
+    "ctaPrimary": "Book Your Chair",
+    "ctaSecondary": "View Services",
+    "image": "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1920&q=80",
+    "ratingValue": "4.9",
+    "ratingCount": "1,200+ reviews"
+  },
+  "marquee": [
+    "Precision Fades",
+    "Hot-Towel Shaves",
+    "Walk-Ins Welcome",
+    "Master Barbers",
+    "Premium Products"
+  ],
+  "stats": [
+    {
+      "value": "15",
+      "suffix": "+",
+      "label": "Years of craft"
+    },
+    {
+      "value": "48",
+      "suffix": "k",
+      "label": "Haircuts delivered"
+    },
+    {
+      "value": "9",
+      "suffix": "",
+      "label": "Master barbers"
+    },
+    {
+      "value": "4.9",
+      "suffix": "",
+      "label": "Average rating"
+    }
+  ],
+  "services": {
+    "eyebrow": "What we do",
+    "title": "Grooming, refined.",
+    "lead": "From a quick tune-up to the full ritual — every service is delivered with hospital-grade tools, sharp attention and zero rush.",
+    "items": [
+      {
+        "icon": "scissors",
+        "title": "Signature Haircut",
+        "description": "Consultation, wash, precision cut and style. Tailored to your face shape, hair type and lifestyle.",
+        "price": "from $38"
+      },
+      {
+        "icon": "razor",
+        "title": "Skin Fade",
+        "description": "Seamless blends from skin to scissor, razor-sharp lines and a finish that stays crisp for weeks.",
+        "price": "from $45"
+      },
+      {
+        "icon": "towel",
+        "title": "Hot-Towel Shave",
+        "description": "The classic ritual: steamed towels, artisan lather, straight-razor precision and a cooling balm finish.",
+        "price": "from $42"
+      },
+      {
+        "icon": "beard",
+        "title": "Beard Sculpt",
+        "description": "Shape, trim, line-up and condition. Oils and hot towels to keep it healthy, defined and itch-free.",
+        "price": "from $32"
+      },
+      {
+        "icon": "family",
+        "title": "Father & Son",
+        "description": "Two chairs, side by side. A shared cut for the young legend and the old one — first haircuts free.",
+        "price": "from $60"
+      },
+      {
+        "icon": "sparkle",
+        "title": "The Full Service",
+        "description": "Haircut, beard sculpt, hot-towel shave, facial steam and scalp massage. Ninety minutes of you.",
+        "price": "from $95"
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "Our story",
+    "title": "Two chairs, one obsession with detail.",
+    "paragraphs": [
+      "Fade & Blade started in a single back room with two chairs, a battered record player and a simple promise: no one leaves until it's right. Fifteen years later that promise hasn't changed — only the room got bigger.",
+      "We blend the discipline of classic barbering with the speed and edge of modern styling. Every barber on our floor is trained in-house across four hundred hours before they ever touch a paying head of hair."
+    ],
+    "ticks": [
+      "Sanitised, single-use blades & fresh linens",
+      "Complimentary drinks — espresso, IPA or bourbon",
+      "Free style check-ups within two weeks of your cut"
+    ],
+    "ctaLabel": "Meet the barbers",
+    "ctaHref": "#team",
+    "image": "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1200&q=80",
+    "imageAlt": "A warmly lit barbershop interior with leather chairs and vintage mirrors",
+    "badgeLabel": "Since",
+    "badgeValue": "2009"
+  },
+  "team": {
+    "eyebrow": "The floor",
+    "title": "Master barbers.",
+    "lead": "Hand-picked, endlessly perfectionist, and genuinely good company for forty-five minutes.",
+    "members": [
+      {
+        "name": "Marco Rossi",
+        "role": "Founder · Master Barber",
+        "bio": "Twenty years on the floor. Known for sharp classic cuts and the best conversation in Brooklyn.",
+        "photo": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80",
+        "instagram": "#",
+        "x": "#"
+      },
+      {
+        "name": "Devon Clarke",
+        "role": "Fade Specialist",
+        "bio": "The hands behind our most requested skin fades. Fast, precise and relentlessly consistent.",
+        "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+        "instagram": "#",
+        "x": "#"
+      },
+      {
+        "name": "Sam Okafor",
+        "role": "Beard & Shave Artisan",
+        "bio": "Straight-razor purist. Trained in traditional Turkish barbering, obsessed with the perfect hot towel.",
+        "photo": "https://images.unsplash.com/photo-1560365163-3e8d64e762ef?auto=format&fit=crop&w=800&q=80",
+        "instagram": "#",
+        "x": "#"
+      }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "The work",
+    "title": "Recent cuts & shaves.",
+    "leadPrefix": "A glimpse from the floor. Follow",
+    "handle": "@fadeandblade",
+    "leadSuffix": "for the daily roll.",
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=900&q=80",
+        "alt": "Close-up of a fresh tapered haircut",
+        "size": "normal"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1622902046580-2b47f47f5471?auto=format&fit=crop&w=900&q=80",
+        "alt": "Barber shaping a beard with clippers",
+        "size": "normal"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=900&q=80",
+        "alt": "Man with a neatly groomed full beard",
+        "size": "tall"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1596728325488-58c87691e9af?auto=format&fit=crop&w=900&q=80",
+        "alt": "Barbershop interior detail with scissors and comb",
+        "size": "normal"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1503443207922-dff7d543fd0e?auto=format&fit=crop&w=900&q=80",
+        "alt": "Straight razor and shaving brush on a counter",
+        "size": "normal"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1519500099198-fd81846b8f03?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Barber finishing a client's hairline with a trimmer",
+        "size": "wide"
+      }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "Simple rates",
+    "title": "Pricing.",
+    "lead": "No hidden extras. Every price includes consultation, wash and finishing product.",
+    "note": "Students & seniors get 15% off Monday–Thursday. Ask at the desk.",
+    "plans": [
+      {
+        "name": "The Quick Fix",
+        "description": "In, sharp, out. Perfect between full appointments.",
+        "price": "$25",
+        "period": "/ visit",
+        "featured": false,
+        "badge": "",
+        "ctaLabel": "Book now",
+        "ctaHref": "#booking",
+        "features": [
+          "Neck & line-up tidy",
+          "Beard edge clean",
+          "Hot towel finish",
+          "15 minutes"
+        ]
+      },
+      {
+        "name": "The Full Groom",
+        "description": "Our signature experience, cut and finished to perfection.",
+        "price": "$65",
+        "period": "/ visit",
+        "featured": true,
+        "badge": "Most popular",
+        "ctaLabel": "Book now",
+        "ctaHref": "#booking",
+        "features": [
+          "Signature haircut & style",
+          "Beard sculpt & line-up",
+          "Hot-towel face shave",
+          "Wash, tonic & scalp massage",
+          "45–60 minutes"
+        ]
+      },
+      {
+        "name": "The Ritual",
+        "description": "The full, unhurried treatment. Ninety minutes of pure maintenance.",
+        "price": "$95",
+        "period": "/ visit",
+        "featured": false,
+        "badge": "",
+        "ctaLabel": "Book now",
+        "ctaHref": "#booking",
+        "features": [
+          "Everything in The Full Groom",
+          "Facial steam & mask",
+          "Head & shoulder massage",
+          "Grey blending available",
+          "90 minutes"
+        ]
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Loyal regulars",
+    "title": "What the chairs say.",
+    "items": [
+      {
+        "quote": "Best fade I've had in the city, hands down. Devon takes his time and the finish is flawless. I've been going for three years and never a bad cut.",
+        "author": "James T.",
+        "role": "Regular since 2021",
+        "rating": 5
+      },
+      {
+        "quote": "The hot-towel shave is worth every penny. Marco makes you feel like royalty for forty-five minutes. Genuinely the highlight of my month.",
+        "author": "Andre M.",
+        "role": "Full Service member",
+        "rating": 5
+      },
+      {
+        "quote": "Took my five-year-old for his first haircut. They were so patient with him. We both walked out looking sharp. This place is a gem.",
+        "author": "Priya S.",
+        "role": "Father & Son regular",
+        "rating": 5
+      },
+      {
+        "quote": "Booked online in thirty seconds, walked in, espresso in hand, out in forty minutes looking like a new man. The whole operation is slick.",
+        "author": "Kwame B.",
+        "role": "New regular",
+        "rating": 5
+      }
+    ]
+  },
+  "booking": {
+    "eyebrow": "Reserve",
+    "title": "Book your chair.",
+    "introPrefix": "Pick a day, tell us what you need and we'll confirm by text within the hour. Prefer to talk? Call us on",
+    "points": [
+      {
+        "title": "Free cancellation",
+        "text": "Up to 4 hours before your slot."
+      },
+      {
+        "title": "Walk-ins welcome",
+        "text": "But booking guarantees your barber."
+      },
+      {
+        "title": "Card or cash",
+        "text": "Apple Pay & contactless accepted."
+      }
+    ],
+    "services": [
+      "Signature Haircut — $38",
+      "Skin Fade — $45",
+      "Hot-Towel Shave — $42",
+      "Beard Sculpt — $32",
+      "The Full Groom — $65",
+      "The Ritual — $95"
+    ],
+    "barbers": [
+      "No preference",
+      "Marco Rossi",
+      "Devon Clarke",
+      "Sam Okafor"
+    ],
+    "times": [
+      "9:00 AM",
+      "10:00 AM",
+      "11:00 AM",
+      "12:00 PM",
+      "1:00 PM",
+      "2:00 PM",
+      "3:00 PM",
+      "4:00 PM",
+      "5:00 PM",
+      "6:00 PM",
+      "7:00 PM"
+    ],
+    "submitLabel": "Confirm Booking",
+    "successMessage": "Request received. We'll text you a confirmation shortly."
+  },
+  "contact": {
+    "eyebrow": "Find us",
+    "title": "Come through.",
+    "addressLine1": "128 Bedford Street",
+    "addressLine2": "Brooklyn, NY 11222",
+    "directionsLabel": "Get directions",
+    "phone": "(555) 123–4567",
+    "phoneHref": "tel:+15551234567",
+    "email": "hello@fadeandblade.com",
+    "mapUrl": "https://www.openstreetmap.org/export/embed.html?bbox=-73.9650%2C40.7150%2C-73.9400%2C40.7300&layer=mapnik",
+    "hours": [
+      {
+        "label": "Mon – Fri",
+        "value": "9:00 – 20:00"
+      },
+      {
+        "label": "Saturday",
+        "value": "9:00 – 20:00"
+      },
+      {
+        "label": "Sunday",
+        "value": "10:00 – 16:00"
+      }
+    ]
+  },
+  "ctaBanner": {
+    "title": "Your best cut is one booking away.",
+    "text": "Chairs fill fast on weekends — lock in your slot now.",
+    "primaryLabel": "Book a Chair",
+    "secondaryLabel": "Call the shop"
+  },
+  "faq": {
+    "eyebrow": "Good to know",
+    "title": "Questions.",
+    "items": [
+      {
+        "question": "Do you take walk-ins?",
+        "answer": "Always. We keep two chairs open for walk-ins every day. Booking just guarantees your preferred barber and time slot, especially on Fridays and Saturdays."
+      },
+      {
+        "question": "How should I prepare for a shave?",
+        "answer": "Just arrive with clean skin and let us do the rest. Avoid shaving for two days beforehand if you can — the razor glides better and the finish lasts longer."
+      },
+      {
+        "question": "Do you cut kids' hair?",
+        "answer": "We love it. Our Father & Son service pairs two chairs side by side, and a child's first haircut is always on the house."
+      },
+      {
+        "question": "What products do you use?",
+        "answer": "Small-batch pomades, clays, oils and balms — cruelty-free and made in the USA. Everything we use on you is available to take home at the counter."
+      }
+    ]
+  },
+  "footer": {
+    "description": "A premium barbershop and grooming parlour in the heart of Brooklyn. Sharp cuts, timeless character, since 2009.",
+    "socials": [
+      {
+        "network": "Instagram",
+        "href": "#"
+      },
+      {
+        "network": "Facebook",
+        "href": "#"
+      },
+      {
+        "network": "X",
+        "href": "#"
+      },
+      {
+        "network": "TikTok",
+        "href": "#"
+      }
+    ],
+    "columns": [
+      {
+        "title": "Explore",
+        "links": [
+          {
+            "label": "Services",
+            "href": "#services"
+          },
+          {
+            "label": "About",
+            "href": "#about"
+          },
+          {
+            "label": "Barbers",
+            "href": "#team"
+          },
+          {
+            "label": "Gallery",
+            "href": "#gallery"
+          },
+          {
+            "label": "Pricing",
+            "href": "#pricing"
+          }
+        ]
+      },
+      {
+        "title": "Visit",
+        "links": [
+          {
+            "label": "128 Bedford St, Brooklyn",
+            "href": "#contact"
+          },
+          {
+            "label": "(555) 123–4567",
+            "href": "tel:+15551234567"
+          },
+          {
+            "label": "hello@fadeandblade.com",
+            "href": "mailto:hello@fadeandblade.com"
+          }
+        ]
+      }
+    ],
+    "hoursNote": "Mon–Sat 9–20 · Sun 10–16",
+    "newsletterNote": "Cuts, tips and members-only offers. No spam, just sharpness.",
+    "copyright": "Fade & Blade Barbershop. All rights reserved.",
+    "legal": [
+      {
+        "label": "Privacy",
+        "href": "#"
+      },
+      {
+        "label": "Terms",
+        "href": "#"
+      },
+      {
+        "label": "Careers",
+        "href": "#"
+      }
+    ]
+  }
+}

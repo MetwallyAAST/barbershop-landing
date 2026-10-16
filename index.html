@@ -21,15 +21,15 @@
     <div class="container topbar__inner">
       <span class="topbar__item">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-        Mon&ndash;Sat: 9:00 &ndash; 20:00 &middot; Sun: 10:00 &ndash; 16:00
+        <span data-field="topbar.hours">Mon&ndash;Sat: 9:00 &ndash; 20:00 &middot; Sun: 10:00 &ndash; 16:00</span>
       </span>
       <span class="topbar__item">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>
-        <a href="tel:+15551234567">(555) 123&ndash;4567</a>
+        <a href="tel:+15551234567" data-field="topbar.phoneHref" data-attr="href"><span data-field="topbar.phone">(555) 123&ndash;4567</span></a>
       </span>
       <span class="topbar__item topbar__item--hide">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-        128 Bedford St, Brooklyn, NY
+        <span data-field="topbar.address">128 Bedford St, Brooklyn, NY</span>
       </span>
     </div>
   </div>
@@ -42,20 +42,19 @@
           <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/>
           <path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/>
         </svg>
-        <span class="brand__text">Fade<span class="brand__amp">&amp;</span>Blade</span>
+        <span class="brand__text"><span data-field="site.brandLeft">Fade</span><span class="brand__amp" data-field="site.brandAmp">&amp;</span><span data-field="site.brandRight">Blade</span></span>
       </a>
 
       <nav class="nav__links" id="navLinks" aria-label="Primary">
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#team">Barbers</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#contact">Visit</a>
-        <a class="btn btn--gold nav__cta-mobile" href="#booking">Book a Chair</a>
+        <div class="nav__links-list" data-list="nav.links">
+          <template data-item>
+            <a data-field="item.href" data-attr="href"><span data-field="item.label">Services</span></a>
+          </template>
+        </div>
+        <a class="btn btn--gold nav__cta-mobile" href="#booking" data-field="nav.cta">Book a Chair</a>
       </nav>
 
-      <a class="btn btn--gold nav__cta" href="#booking">Book a Chair</a>
+      <a class="btn btn--gold nav__cta" href="#booking" data-field="nav.cta">Book a Chair</a>
 
       <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
         <span></span><span></span><span></span>
@@ -67,27 +66,27 @@
     <!-- ============ HERO ============ -->
     <section class="hero" id="home">
       <div class="hero__media" aria-hidden="true">
-        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1920&q=80" alt="" />
+        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1920&q=80" alt="" data-field="hero.image" data-attr="src" />
         <div class="hero__scrim"></div>
       </div>
 
       <div class="container hero__inner">
-        <p class="eyebrow reveal">Est. 2009 &middot; Brooklyn, NY</p>
+        <p class="eyebrow reveal" data-field="hero.eyebrow">Est. 2009 &middot; Brooklyn, NY</p>
         <h1 class="hero__title reveal">
-          Sharp cuts.<br />
-          <span class="text-gold">Timeless</span> character.
+          <span data-field="hero.titleLine1">Sharp cuts.</span><br />
+          <span class="text-gold" data-field="hero.titleAccent">Timeless</span> <span data-field="hero.titleLine2">character.</span>
         </h1>
-        <p class="hero__lead reveal">
+        <p class="hero__lead reveal" data-field="hero.lead">
           Precision fades, hot-towel shaves and honest conversation. A modern barbershop
           built on old-school craft &mdash; where every man leaves feeling like the best version of himself.
         </p>
 
         <div class="hero__actions reveal">
           <a class="btn btn--gold btn--lg" href="#booking">
-            Book Your Chair
+            <span data-field="hero.ctaPrimary">Book Your Chair</span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a class="btn btn--ghost btn--lg" href="#services">View Services</a>
+          <a class="btn btn--ghost btn--lg" href="#services" data-field="hero.ctaSecondary">View Services</a>
         </div>
 
         <div class="hero__badges reveal">
@@ -99,7 +98,7 @@
               <svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
               <svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
             </div>
-            <span><strong>4.9</strong> &middot; 1,200+ reviews</span>
+            <span><strong data-field="hero.ratingValue">4.9</strong> &middot; <span data-field="hero.ratingCount">1,200+ reviews</span></span>
           </div>
         </div>
       </div>
@@ -112,39 +111,20 @@
 
     <!-- ============ MARQUEE / TRUST STRIP ============ -->
     <section class="strip" aria-label="Highlights">
-      <div class="strip__track">
-        <span>Precision Fades</span><i></i>
-        <span>Hot-Towel Shaves</span><i></i>
-        <span>Walk-Ins Welcome</span><i></i>
-        <span>Master Barbers</span><i></i>
-        <span>Premium Products</span><i></i>
-        <span>Precision Fades</span><i></i>
-        <span>Hot-Towel Shaves</span><i></i>
-        <span>Walk-Ins Welcome</span><i></i>
-        <span>Master Barbers</span><i></i>
-        <span>Premium Products</span><i></i>
+      <div class="strip__track" data-list="marquee" data-repeat="2" data-item-sep="<i></i>">
+        <template data-item><span data-field="item">Precision Fades</span></template>
       </div>
     </section>
 
     <!-- ============ STATS ============ -->
     <section class="section section--stats">
-      <div class="container stats">
-        <div class="stat reveal">
-          <span class="stat__num" data-count="15">0</span><span class="stat__suffix">+</span>
-          <p class="stat__label">Years of craft</p>
-        </div>
-        <div class="stat reveal">
-          <span class="stat__num" data-count="48">0</span><span class="stat__suffix">k</span>
-          <p class="stat__label">Haircuts delivered</p>
-        </div>
-        <div class="stat reveal">
-          <span class="stat__num" data-count="9">0</span>
-          <p class="stat__label">Master barbers</p>
-        </div>
-        <div class="stat reveal">
-          <span class="stat__num" data-count="4.9" data-decimals="1">0</span>
-          <p class="stat__label">Average rating</p>
-        </div>
+      <div class="container stats" data-list="stats">
+        <template data-item>
+          <div class="stat reveal">
+            <span class="stat__num" data-counter data-field="item.value">0</span><span class="stat__suffix" data-field="item.suffix">+</span>
+            <p class="stat__label" data-field="item.label">Years of craft</p>
+          </div>
+        </template>
       </div>
     </section>
 
@@ -152,68 +132,23 @@
     <section class="section" id="services">
       <div class="container">
         <header class="section__head reveal">
-          <p class="eyebrow">What we do</p>
-          <h2 class="section__title">Grooming, refined.</h2>
-          <p class="section__lead">
+          <p class="eyebrow" data-field="services.eyebrow">What we do</p>
+          <h2 class="section__title" data-field="services.title">Grooming, refined.</h2>
+          <p class="section__lead" data-field="services.lead">
             From a quick tune-up to the full ritual &mdash; every service is delivered with
             hospital-grade tools, sharp attention and zero rush.
           </p>
         </header>
 
-        <div class="cards">
-          <article class="card reveal">
-            <div class="card__icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg>
-            </div>
-            <h3>Signature Haircut</h3>
-            <p>Consultation, wash, precision cut and style. Tailored to your face shape, hair type and lifestyle.</p>
-            <span class="card__price">from $38</span>
-          </article>
-
-          <article class="card reveal">
-            <div class="card__icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V7l4-4 4 4M11 21V7l4-4 4 4v14"/><path d="M2 21h20"/></svg>
-            </div>
-            <h3>Skin Fade</h3>
-            <p>Seamless blends from skin to scissor, razor-sharp lines and a finish that stays crisp for weeks.</p>
-            <span class="card__price">from $45</span>
-          </article>
-
-          <article class="card reveal">
-            <div class="card__icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 3 2 5 2 8h10c0-3 2-5 2-8a7 7 0 0 0-7-7Z"/><path d="M9 21h6"/></svg>
-            </div>
-            <h3>Hot-Towel Shave</h3>
-            <p>The classic ritual: steamed towels, artisan lather, straight-razor precision and a cooling balm finish.</p>
-            <span class="card__price">from $42</span>
-          </article>
-
-          <article class="card reveal">
-            <div class="card__icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/><path d="M6 9a6 6 0 0 1 12 0c0 2-1.5 3-1.5 3S15 9 12 9s-4.5 3-4.5 3S6 11 6 9Z"/></svg>
-            </div>
-            <h3>Beard Sculpt</h3>
-            <p>Shape, trim, line-up and condition. Oils and hot towels to keep it healthy, defined and itch-free.</p>
-            <span class="card__price">from $32</span>
-          </article>
-
-          <article class="card reveal">
-            <div class="card__icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-            </div>
-            <h3>Father &amp; Son</h3>
-            <p>Two chairs, side by side. A shared cut for the young legend and the old one &mdash; first haircuts free.</p>
-            <span class="card__price">from $60</span>
-          </article>
-
-          <article class="card reveal">
-            <div class="card__icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1 4-2 5-2 8a2 2 0 0 0 4 0c0-1-.5-2-.5-2"/><path d="M12 21a8 8 0 0 0 8-8c0-3-2-5-3-7"/></svg>
-            </div>
-            <h3>The Full Service</h3>
-            <p>Haircut, beard sculpt, hot-towel shave, facial steam and scalp massage. Ninety minutes of you.</p>
-            <span class="card__price">from $95</span>
-          </article>
+        <div class="cards" data-list="services.items">
+          <template data-item>
+            <article class="card reveal">
+              <div class="card__icon" data-icon data-field="item.icon"></div>
+              <h3 data-field="item.title">Signature Haircut</h3>
+              <p data-field="item.description">Consultation, wash, precision cut and style.</p>
+              <span class="card__price" data-field="item.price">from $38</span>
+            </article>
+          </template>
         </div>
       </div>
     </section>
@@ -222,34 +157,28 @@
     <section class="section section--dark about" id="about">
       <div class="container about__grid">
         <div class="about__media reveal">
-          <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1200&q=80" alt="A warmly lit barbershop interior with leather chairs and vintage mirrors" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1200&q=80" alt="A warmly lit barbershop interior" data-field="about.image" data-attr="src" data-field-attrs="alt:about.imageAlt" />
           <div class="about__badge">
-            <strong>Since</strong>
-            <span>2009</span>
+            <strong data-field="about.badgeLabel">Since</strong>
+            <span data-field="about.badgeValue">2009</span>
           </div>
         </div>
 
         <div class="about__body reveal">
-          <p class="eyebrow">Our story</p>
-          <h2 class="section__title">Two chairs, one obsession with detail.</h2>
-          <p>
-            Fade &amp; Blade started in a single back room with two chairs, a battered
-            record player and a simple promise: no one leaves until it's right. Fifteen
-            years later that promise hasn't changed &mdash; only the room got bigger.
-          </p>
-          <p>
-            We blend the discipline of classic barbering with the speed and edge of
-            modern styling. Every barber on our floor is trained in-house across four
-            hundred hours before they ever touch a paying head of hair.
-          </p>
+          <p class="eyebrow" data-field="about.eyebrow">Our story</p>
+          <h2 class="section__title" data-field="about.title">Two chairs, one obsession with detail.</h2>
 
-          <ul class="ticks">
-            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20 6-11 11L4 12"/></svg> Sanitised, single-use blades &amp; fresh linens</li>
-            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20 6-11 11L4 12"/></svg> Complimentary drinks &mdash; espresso, IPA or bourbon</li>
-            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20 6-11 11L4 12"/></svg> Free style check-ups within two weeks of your cut</li>
+          <div data-list="about.paragraphs">
+            <template data-item><p data-field="item"></p></template>
+          </div>
+
+          <ul class="ticks" data-list="about.ticks">
+            <template data-item>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20 6-11 11L4 12"/></svg> <span data-field="item"></span></li>
+            </template>
           </ul>
 
-          <a class="btn btn--gold" href="#team">Meet the barbers</a>
+          <a class="btn btn--gold" data-field="about.ctaHref" data-attr="href" href="#team"><span data-field="about.ctaLabel">Meet the barbers</span></a>
         </div>
       </div>
     </section>
@@ -258,50 +187,26 @@
     <section class="section" id="team">
       <div class="container">
         <header class="section__head reveal">
-          <p class="eyebrow">The floor</p>
-          <h2 class="section__title">Master barbers.</h2>
-          <p class="section__lead">Hand-picked, endlessly perfectionist, and genuinely good company for forty-five minutes.</p>
+          <p class="eyebrow" data-field="team.eyebrow">The floor</p>
+          <h2 class="section__title" data-field="team.title">Master barbers.</h2>
+          <p class="section__lead" data-field="team.lead">Hand-picked, endlessly perfectionist, and genuinely good company for forty-five minutes.</p>
         </header>
 
-        <div class="team">
-          <article class="member reveal">
-            <div class="member__photo">
-              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80" alt="Portrait of Marco Rossi, master barber and founder" loading="lazy" />
-            </div>
-            <h3>Marco Rossi</h3>
-            <p class="member__role">Founder &middot; Master Barber</p>
-            <p class="member__bio">Twenty years on the floor. Known for sharp classic cuts and the best conversation in Brooklyn.</p>
-            <div class="member__social">
-              <a href="#" aria-label="Marco on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></a>
-              <a href="#" aria-label="Marco on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16M20 4 4 20"/></svg></a>
-            </div>
-          </article>
-
-          <article class="member reveal">
-            <div class="member__photo">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Portrait of Devon Clarke, fade specialist" loading="lazy" />
-            </div>
-            <h3>Devon Clarke</h3>
-            <p class="member__role">Fade Specialist</p>
-            <p class="member__bio">The hands behind our most requested skin fades. Fast, precise and relentlessly consistent.</p>
-            <div class="member__social">
-              <a href="#" aria-label="Devon on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></a>
-              <a href="#" aria-label="Devon on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16M20 4 4 20"/></svg></a>
-            </div>
-          </article>
-
-          <article class="member reveal">
-            <div class="member__photo">
-              <img src="https://images.unsplash.com/photo-1560365163-3e8d64e762ef?auto=format&fit=crop&w=800&q=80" alt="Portrait of Sam Okafor, beard and shave artisan" loading="lazy" />
-            </div>
-            <h3>Sam Okafor</h3>
-            <p class="member__role">Beard &amp; Shave Artisan</p>
-            <p class="member__bio">Straight-razor purist. Trained in traditional Turkish barbering, obsessed with the perfect hot towel.</p>
-            <div class="member__social">
-              <a href="#" aria-label="Sam on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></a>
-              <a href="#" aria-label="Sam on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16M20 4 4 20"/></svg></a>
-            </div>
-          </article>
+        <div class="team" data-list="team.members">
+          <template data-item>
+            <article class="member reveal">
+              <div class="member__photo">
+                <img src="" alt="" data-field="item.photo" data-attr="src" data-field-attrs="alt:item.name" />
+              </div>
+              <h3 data-field="item.name">Marco Rossi</h3>
+              <p class="member__role" data-field="item.role">Founder &middot; Master Barber</p>
+              <p class="member__bio" data-field="item.bio">Twenty years on the floor.</p>
+              <div class="member__social">
+                <a data-field="item.instagram" data-attr="href" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></a>
+                <a data-field="item.x" data-attr="href" href="#" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16M20 4 4 20"/></svg></a>
+              </div>
+            </article>
+          </template>
         </div>
       </div>
     </section>
@@ -310,18 +215,21 @@
     <section class="section section--dark" id="gallery">
       <div class="container">
         <header class="section__head reveal">
-          <p class="eyebrow">The work</p>
-          <h2 class="section__title">Recent cuts &amp; shaves.</h2>
-          <p class="section__lead">A glimpse from the floor. Follow <a href="#" class="text-gold">@fadeandblade</a> for the daily roll.</p>
+          <p class="eyebrow" data-field="gallery.eyebrow">The work</p>
+          <h2 class="section__title" data-field="gallery.title">Recent cuts &amp; shaves.</h2>
+          <p class="section__lead">
+            <span data-field="gallery.leadPrefix">A glimpse from the floor. Follow</span>
+            <a href="#" class="text-gold" data-field="gallery.handle">@fadeandblade</a>
+            <span data-field="gallery.leadSuffix">for the daily roll.</span>
+          </p>
         </header>
 
-        <div class="gallery">
-          <figure class="gallery__item reveal"><img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=900&q=80" alt="Close-up of a fresh tapered haircut" loading="lazy" /></figure>
-          <figure class="gallery__item reveal"><img src="https://images.unsplash.com/photo-1622902046580-2b47f47f5471?auto=format&fit=crop&w=900&q=80" alt="Barber shaping a beard with clippers" loading="lazy" /></figure>
-          <figure class="gallery__item gallery__item--tall reveal"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=900&q=80" alt="Man with a neatly groomed full beard" loading="lazy" /></figure>
-          <figure class="gallery__item reveal"><img src="https://images.unsplash.com/photo-1596728325488-58c87691e9af?auto=format&fit=crop&w=900&q=80" alt="Barbershop interior detail with scissors and comb" loading="lazy" /></figure>
-          <figure class="gallery__item reveal"><img src="https://images.unsplash.com/photo-1503443207922-dff7d543fd0e?auto=format&fit=crop&w=900&q=80" alt="Straight razor and shaving brush on a counter" loading="lazy" /></figure>
-          <figure class="gallery__item gallery__item--wide reveal"><img src="https://images.unsplash.com/photo-1519500099198-fd81846b8f03?auto=format&fit=crop&w=1200&q=80" alt="Barber finishing a client's hairline with a trimmer" loading="lazy" /></figure>
+        <div class="gallery" data-list="gallery.images">
+          <template data-item>
+            <figure class="gallery__item reveal" data-field="item.size" data-classes="tall:gallery__item--tall,wide:gallery__item--wide">
+              <img src="" alt="" loading="lazy" data-field="item.src" data-attr="src" data-field-attrs="alt:item.alt" />
+            </figure>
+          </template>
         </div>
       </div>
     </section>
@@ -330,55 +238,26 @@
     <section class="section" id="pricing">
       <div class="container">
         <header class="section__head reveal">
-          <p class="eyebrow">Simple rates</p>
-          <h2 class="section__title">Pricing.</h2>
-          <p class="section__lead">No hidden extras. Every price includes consultation, wash and finishing product.</p>
+          <p class="eyebrow" data-field="pricing.eyebrow">Simple rates</p>
+          <h2 class="section__title" data-field="pricing.title">Pricing.</h2>
+          <p class="section__lead" data-field="pricing.lead">No hidden extras. Every price includes consultation, wash and finishing product.</p>
         </header>
 
-        <div class="pricing">
-          <article class="plan reveal">
-            <h3 class="plan__name">The Quick Fix</h3>
-            <p class="plan__desc">In, sharp, out. Perfect between full appointments.</p>
-            <p class="plan__price"><span>$25</span> / visit</p>
-            <ul class="plan__list">
-              <li>Neck &amp; line-up tidy</li>
-              <li>Beard edge clean</li>
-              <li>Hot towel finish</li>
-              <li>15 minutes</li>
-            </ul>
-            <a class="btn btn--outline btn--block" href="#booking">Book now</a>
-          </article>
-
-          <article class="plan plan--featured reveal">
-            <span class="plan__flag">Most popular</span>
-            <h3 class="plan__name">The Full Groom</h3>
-            <p class="plan__desc">Our signature experience, cut and finished to perfection.</p>
-            <p class="plan__price"><span>$65</span> / visit</p>
-            <ul class="plan__list">
-              <li>Signature haircut &amp; style</li>
-              <li>Beard sculpt &amp; line-up</li>
-              <li>Hot-towel face shave</li>
-              <li>Wash, tonic &amp; scalp massage</li>
-              <li>45&ndash;60 minutes</li>
-            </ul>
-            <a class="btn btn--gold btn--block" href="#booking">Book now</a>
-          </article>
-
-          <article class="plan reveal">
-            <h3 class="plan__name">The Ritual</h3>
-            <p class="plan__desc">The full, unhurried treatment. Ninety minutes of pure maintenance.</p>
-            <p class="plan__price"><span>$95</span> / visit</p>
-            <ul class="plan__list">
-              <li>Everything in The Full Groom</li>
-              <li>Facial steam &amp; mask</li>
-              <li>Head &amp; shoulder massage</li>
-              <li>Grey blending available</li>
-              <li>90 minutes</li>
-            </ul>
-            <a class="btn btn--outline btn--block" href="#booking">Book now</a>
-          </article>
+        <div class="pricing" data-list="pricing.plans">
+          <template data-item>
+            <article class="plan reveal" data-if="item.featured" data-if-class="plan--featured">
+              <span class="plan__flag" data-field="item.badge"></span>
+              <h3 class="plan__name" data-field="item.name">The Full Groom</h3>
+              <p class="plan__desc" data-field="item.description"></p>
+              <p class="plan__price"><span data-field="item.price">$65</span> <span data-field="item.period">/ visit</span></p>
+              <ul class="plan__list" data-list="item.features">
+                <template data-item><li data-field="item"></li></template>
+              </ul>
+              <a class="btn btn--gold btn--block" data-field="item.ctaHref" data-attr="href" href="#booking"><span data-field="item.ctaLabel">Book now</span></a>
+            </article>
+          </template>
         </div>
-        <p class="pricing__note reveal">Students &amp; seniors get 15% off Monday&ndash;Thursday. Ask at the desk.</p>
+        <p class="pricing__note reveal" data-field="pricing.note">Students &amp; seniors get 15% off Monday&ndash;Thursday. Ask at the desk.</p>
       </div>
     </section>
 
@@ -386,33 +265,20 @@
     <section class="section section--dark testimonials" id="testimonials">
       <div class="container">
         <header class="section__head reveal">
-          <p class="eyebrow">Loyal regulars</p>
-          <h2 class="section__title">What the chairs say.</h2>
+          <p class="eyebrow" data-field="testimonials.eyebrow">Loyal regulars</p>
+          <h2 class="section__title" data-field="testimonials.title">What the chairs say.</h2>
         </header>
 
         <div class="slider" id="slider">
           <div class="slider__viewport">
-            <div class="slider__track" id="sliderTrack">
-              <blockquote class="quote">
-                <div class="quote__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p>"Best fade I've had in the city, hands down. Devon takes his time and the finish is flawless. I've been going for three years and never a bad cut."</p>
-                <footer><strong>James T.</strong><span>Regular since 2021</span></footer>
-              </blockquote>
-              <blockquote class="quote">
-                <div class="quote__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p>"The hot-towel shave is worth every penny. Marco makes you feel like royalty for forty-five minutes. Genuinely the highlight of my month."</p>
-                <footer><strong>Andre M.</strong><span>Full Service member</span></footer>
-              </blockquote>
-              <blockquote class="quote">
-                <div class="quote__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p>"Took my five-year-old for his first haircut. They were so patient with him. We both walked out looking sharp. This place is a gem."</p>
-                <footer><strong>Priya S.</strong><span>Father &amp; Son regular</span></footer>
-              </blockquote>
-              <blockquote class="quote">
-                <div class="quote__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p>"Booked online in thirty seconds, walked in, espresso in hand, out in forty minutes looking like a new man. The whole operation is slick."</p>
-                <footer><strong>Kwame B.</strong><span>New regular</span></footer>
-              </blockquote>
+            <div class="slider__track" id="sliderTrack" data-list="testimonials.items">
+              <template data-item>
+                <blockquote class="quote">
+                  <div class="quote__stars" aria-hidden="true" data-stars data-field="item.rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                  <p data-field="item.quote"></p>
+                  <footer><strong data-field="item.author"></strong><span data-field="item.role"></span></footer>
+                </blockquote>
+              </template>
             </div>
           </div>
 
@@ -433,27 +299,20 @@
     <section class="section" id="booking">
       <div class="container booking">
         <div class="booking__intro reveal">
-          <p class="eyebrow">Reserve</p>
-          <h2 class="section__title">Book your chair.</h2>
+          <p class="eyebrow" data-field="booking.eyebrow">Reserve</p>
+          <h2 class="section__title" data-field="booking.title">Book your chair.</h2>
           <p>
-            Pick a day, tell us what you need and we'll confirm by text within the hour.
-            Prefer to talk? Call us on
-            <a href="tel:+15551234567" class="text-gold">(555) 123&ndash;4567</a>.
+            <span data-field="booking.introPrefix">Pick a day, tell us what you need and we'll confirm by text within the hour. Prefer to talk? Call us on</span>
+            <a href="tel:+15551234567" class="text-gold" data-field="contact.phoneHref" data-attr="href"><span data-field="contact.phone">(555) 123&ndash;4567</span></a>.
           </p>
 
-          <div class="booking__points">
-            <div class="booking__point">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20 6-11 11L4 12"/></svg>
-              <div><strong>Free cancellation</strong><span>Up to 4 hours before your slot.</span></div>
-            </div>
-            <div class="booking__point">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20 6-11 11L4 12"/></svg>
-              <div><strong>Walk-ins welcome</strong><span>But booking guarantees your barber.</span></div>
-            </div>
-            <div class="booking__point">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20 6-11 11L4 12"/></svg>
-              <div><strong>Card or cash</strong><span>Apple Pay &amp; contactless accepted.</span></div>
-            </div>
+          <div class="booking__points" data-list="booking.points">
+            <template data-item>
+              <div class="booking__point">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20 6-11 11L4 12"/></svg>
+                <div><strong data-field="item.title"></strong><span data-field="item.text"></span></div>
+              </div>
+            </template>
           </div>
         </div>
 
@@ -474,24 +333,16 @@
           <div class="form__row">
             <div class="field">
               <label for="service">Service <span class="req">*</span></label>
-              <select id="service" name="service" required>
+              <select id="service" name="service" required data-list="booking.services">
                 <option value="">Choose a service</option>
-                <option>Signature Haircut &mdash; $38</option>
-                <option>Skin Fade &mdash; $45</option>
-                <option>Hot-Towel Shave &mdash; $42</option>
-                <option>Beard Sculpt &mdash; $32</option>
-                <option>The Full Groom &mdash; $65</option>
-                <option>The Ritual &mdash; $95</option>
+                <template data-item><option data-field="item"></option></template>
               </select>
               <p class="field__error" data-error-for="service" role="alert"></p>
             </div>
             <div class="field">
               <label for="barber">Preferred barber</label>
-              <select id="barber" name="barber">
-                <option value="">No preference</option>
-                <option>Marco Rossi</option>
-                <option>Devon Clarke</option>
-                <option>Sam Okafor</option>
+              <select id="barber" name="barber" data-list="booking.barbers">
+                <template data-item><option data-field="item"></option></template>
               </select>
             </div>
           </div>
@@ -504,12 +355,9 @@
             </div>
             <div class="field">
               <label for="time">Preferred time <span class="req">*</span></label>
-              <select id="time" name="time" required>
+              <select id="time" name="time" required data-list="booking.times">
                 <option value="">Select a time</option>
-                <option>9:00 AM</option><option>10:00 AM</option><option>11:00 AM</option>
-                <option>12:00 PM</option><option>1:00 PM</option><option>2:00 PM</option>
-                <option>3:00 PM</option><option>4:00 PM</option><option>5:00 PM</option>
-                <option>6:00 PM</option><option>7:00 PM</option>
+                <template data-item><option data-field="item"></option></template>
               </select>
               <p class="field__error" data-error-for="time" role="alert"></p>
             </div>
@@ -521,13 +369,13 @@
           </div>
 
           <button class="btn btn--gold btn--lg btn--block" type="submit" id="submitBtn">
-            <span class="btn__label">Confirm Booking</span>
+            <span class="btn__label" data-field="booking.submitLabel">Confirm Booking</span>
             <span class="btn__spinner" aria-hidden="true"></span>
           </button>
 
           <p class="form__success" id="formSuccess" role="status" aria-live="polite">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20 6-11 11L4 12"/></svg>
-            <span>Request received. We'll text you a confirmation shortly.</span>
+            <span data-field="booking.successMessage">Request received. We'll text you a confirmation shortly.</span>
           </p>
         </form>
       </div>
@@ -537,30 +385,30 @@
     <section class="section section--dark" id="contact">
       <div class="container">
         <header class="section__head reveal">
-          <p class="eyebrow">Find us</p>
-          <h2 class="section__title">Come through.</h2>
+          <p class="eyebrow" data-field="contact.eyebrow">Find us</p>
+          <h2 class="section__title" data-field="contact.title">Come through.</h2>
         </header>
 
         <div class="contact">
           <div class="contact__info reveal">
             <div class="contact__block">
               <h3>Address</h3>
-              <p>128 Bedford Street<br />Brooklyn, NY 11222</p>
-              <a class="contact__link" href="#" target="_blank" rel="noopener">Get directions &rarr;</a>
+              <p><span data-field="contact.addressLine1">128 Bedford Street</span><br /><span data-field="contact.addressLine2">Brooklyn, NY 11222</span></p>
+              <a class="contact__link" href="#contact" data-field="contact.directionsLabel">&rarr;</a>
             </div>
             <div class="contact__block">
               <h3>Opening hours</h3>
-              <ul class="hours">
-                <li><span>Mon &ndash; Fri</span><span>9:00 &ndash; 20:00</span></li>
-                <li><span>Saturday</span><span>9:00 &ndash; 20:00</span></li>
-                <li><span>Sunday</span><span>10:00 &ndash; 16:00</span></li>
+              <ul class="hours" data-list="contact.hours">
+                <template data-item>
+                  <li><span data-field="item.label">Mon &ndash; Fri</span><span data-field="item.value">9:00 &ndash; 20:00</span></li>
+                </template>
               </ul>
             </div>
             <div class="contact__block">
               <h3>Get in touch</h3>
               <p>
-                <a class="contact__link" href="tel:+15551234567">(555) 123&ndash;4567</a><br />
-                <a class="contact__link" href="mailto:hello@fadeandblade.com">hello@fadeandblade.com</a>
+                <a class="contact__link" data-field="contact.phoneHref" data-attr="href" href="tel:+15551234567"><span data-field="contact.phone">(555) 123&ndash;4567</span></a><br />
+                <a class="contact__link" data-field="contact.email" data-attr="mailto" href="mailto:hello@fadeandblade.com"><span data-field="contact.email">hello@fadeandblade.com</span></a>
               </p>
             </div>
           </div>
@@ -569,7 +417,8 @@
             <iframe
               title="Map showing Fade and Blade barbershop location"
               src="https://www.openstreetmap.org/export/embed.html?bbox=-73.9650%2C40.7150%2C-73.9400%2C40.7300&amp;layer=mapnik"
-              loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              data-field="contact.mapUrl" data-attr="src"></iframe>
           </div>
         </div>
       </div>
@@ -578,11 +427,11 @@
     <!-- ============ CTA BANNER ============ -->
     <section class="cta">
       <div class="container cta__inner reveal">
-        <h2>Your best cut is one booking away.</h2>
-        <p>Chairs fill fast on weekends &mdash; lock in your slot now.</p>
+        <h2 data-field="ctaBanner.title">Your best cut is one booking away.</h2>
+        <p data-field="ctaBanner.text">Chairs fill fast on weekends &mdash; lock in your slot now.</p>
         <div class="cta__actions">
-          <a class="btn btn--light btn--lg" href="#booking">Book a Chair</a>
-          <a class="btn btn--ghost-light btn--lg" href="tel:+15551234567">Call the shop</a>
+          <a class="btn btn--light btn--lg" href="#booking" data-field="ctaBanner.primaryLabel">Book a Chair</a>
+          <a class="btn btn--ghost-light btn--lg" href="tel:+15551234567" data-field="ctaBanner.secondaryLabel">Call the shop</a>
         </div>
       </div>
     </section>
@@ -591,39 +440,20 @@
     <section class="section" id="faq">
       <div class="container faq">
         <header class="section__head reveal">
-          <p class="eyebrow">Good to know</p>
-          <h2 class="section__title">Questions.</h2>
+          <p class="eyebrow" data-field="faq.eyebrow">Good to know</p>
+          <h2 class="section__title" data-field="faq.title">Questions.</h2>
         </header>
 
-        <div class="accordion reveal">
-          <div class="acc">
-            <button class="acc__head" aria-expanded="false">
-              Do you take walk-ins?
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="acc__body"><p>Always. We keep two chairs open for walk-ins every day. Booking just guarantees your preferred barber and time slot, especially on Fridays and Saturdays.</p></div>
-          </div>
-          <div class="acc">
-            <button class="acc__head" aria-expanded="false">
-              How should I prepare for a shave?
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="acc__body"><p>Just arrive with clean skin and let us do the rest. Avoid shaving for two days beforehand if you can &mdash; the razor glides better and the finish lasts longer.</p></div>
-          </div>
-          <div class="acc">
-            <button class="acc__head" aria-expanded="false">
-              Do you cut kids' hair?
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="acc__body"><p>We love it. Our Father &amp; Son service pairs two chairs side by side, and a child's first haircut is always on the house.</p></div>
-          </div>
-          <div class="acc">
-            <button class="acc__head" aria-expanded="false">
-              What products do you use?
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="acc__body"><p>Small-batch pomades, clays, oils and balms &mdash; cruelty-free and made in the USA. Everything we use on you is available to take home at the counter.</p></div>
-          </div>
+        <div class="accordion reveal" data-list="faq.items">
+          <template data-item>
+            <div class="acc">
+              <button class="acc__head" aria-expanded="false">
+                <span data-field="item.question"></span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+              </button>
+              <div class="acc__body"><p data-field="item.answer"></p></div>
+            </div>
+          </template>
         </div>
       </div>
     </section>
@@ -638,37 +468,35 @@
             <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/>
             <path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/>
           </svg>
-          <span class="brand__text">Fade<span class="brand__amp">&amp;</span>Blade</span>
+          <span class="brand__text"><span data-field="site.brandLeft">Fade</span><span class="brand__amp" data-field="site.brandAmp">&amp;</span><span data-field="site.brandRight">Blade</span></span>
         </a>
-        <p>A premium barbershop and grooming parlour in the heart of Brooklyn. Sharp cuts, timeless character, since 2009.</p>
-        <div class="footer__social">
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></a>
-          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h-3a4 4 0 0 0-4 4v3H6v4h2v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3Z"/></svg></a>
-          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16M20 4 4 20"/></svg></a>
-          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v11a4 4 0 1 1-4-4"/><path d="M14 6a5 5 0 0 0 4 3"/></svg></a>
+        <p data-field="footer.description">A premium barbershop and grooming parlour in the heart of Brooklyn. Sharp cuts, timeless character, since 2009.</p>
+        <p class="footer__hours" data-field="footer.hoursNote">Mon&ndash;Sat 9&ndash;20 &middot; Sun 10&ndash;16</p>
+        <div class="footer__social" data-list="footer.socials">
+          <template data-item>
+            <a data-field="item.href" data-attr="href" href="#" data-field-attrs="aria-label:item.network" aria-label="Social link">
+              <span data-icon data-field="item.network"></span>
+            </a>
+          </template>
         </div>
       </div>
 
-      <div class="footer__col">
-        <h4>Explore</h4>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#team">Barbers</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#pricing">Pricing</a>
-      </div>
-
-      <div class="footer__col">
-        <h4>Visit</h4>
-        <a href="#contact">128 Bedford St, Brooklyn</a>
-        <a href="tel:+15551234567">(555) 123&ndash;4567</a>
-        <a href="mailto:hello@fadeandblade.com">hello@fadeandblade.com</a>
-        <p class="footer__hours">Mon&ndash;Sat 9&ndash;20 &middot; Sun 10&ndash;16</p>
+      <div class="footer__cols" data-list="footer.columns">
+        <template data-item>
+          <div class="footer__col">
+            <h4 data-field="item.title">Explore</h4>
+            <div data-list="item.links">
+              <template data-item>
+                <a data-field="item.href" data-attr="href" href="#"><span data-field="item.label"></span></a>
+              </template>
+            </div>
+          </div>
+        </template>
       </div>
 
       <div class="footer__col">
         <h4>Newsletter</h4>
-        <p class="footer__note">Cuts, tips and members-only offers. No spam, just sharpness.</p>
+        <p class="footer__note" data-field="footer.newsletterNote">Cuts, tips and members-only offers. No spam, just sharpness.</p>
         <form class="newsletter" id="newsletterForm" novalidate>
           <label class="sr-only" for="newsletterEmail">Email address</label>
           <input type="email" id="newsletterEmail" placeholder="you@email.com" required />
@@ -681,8 +509,12 @@
     </div>
 
     <div class="container footer__bottom">
-      <p>&copy; <span id="year">2026</span> Fade &amp; Blade Barbershop. All rights reserved.</p>
-      <p class="footer__legal"><a href="#">Privacy</a> &middot; <a href="#">Terms</a> &middot; <a href="#">Careers</a></p>
+      <p>&copy; <span id="year">2026</span> <span data-field="footer.copyright">Fade &amp; Blade Barbershop. All rights reserved.</span></p>
+      <p class="footer__legal" data-list="footer.legal">
+        <template data-item>
+          <a data-field="item.href" data-attr="href" href="#"><span data-field="item.label"></span></a>
+        </template>
+      </p>
     </div>
   </footer>
 
@@ -690,6 +522,7 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
   </a>
 
+  <script src="content.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
